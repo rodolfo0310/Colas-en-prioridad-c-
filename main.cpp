@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+
+
 //Esta estructura es para que podamos manejar las colas ordinarias, sin prioridad.
 struct Nodo{
   char dato;
@@ -172,15 +174,15 @@ void Menu(){
    
 }
 
-//Funcion pa eliminar cola
+//Funcion para eliminar cola
 void EliminarColaenprioridad(Nodo *&Inicio, Nodo *&Fin, int &n){
 
   n = Inicio->dato;
   Nodo *aux = Inicio;
 
   if(Inicio == Fin){
-Inicio = NULL;
-Fin = NULL;
+     Inicio = NULL;
+     Fin = NULL;
   }
   else{
     Inicio = Inicio->siguiente;
