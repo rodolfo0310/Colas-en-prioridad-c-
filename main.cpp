@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+
+
+//Esta estructura es para que podamos manejar las colas ordinarias, sin prioridad.
 struct Nodo{
   char dato;
   int prioridad;
@@ -8,6 +11,7 @@ struct Nodo{
 
 };
 
+//Esta estructura es para que se puedan manejar las colas con prioridad.
 struct Nodo *crearNuevoNodo(char Dato, int Prioridad){
   struct Nodo*nuevoNodo = new(struct Nodo);
   nuevoNodo -> dato= Dato;
@@ -58,6 +62,8 @@ bool colaVaciaONo(Nodo *frente){
      //Vamos a hacer el condicional más acortado.
 }
 
+//Esta función es utilizada par que cada vez que se haga una inserción o una eliminación, la cola
+//se pueda ordenar en base a la prioridad que el usuario le haya dado.
 void ordenarPrioridad(Nodo *& Inicio, Nodo *& Fin)
 {
      struct Nodo *aux1, *aux2;
@@ -168,15 +174,15 @@ void Menu(){
    
 }
 
-//Funcion pa eliminar cola
+//Funcion para eliminar cola
 void EliminarColaenprioridad(Nodo *&Inicio, Nodo *&Fin, int &n){
 
   n = Inicio->dato;
   Nodo *aux = Inicio;
 
   if(Inicio == Fin){
-Inicio = NULL;
-Fin = NULL;
+     Inicio = NULL;
+     Fin = NULL;
   }
   else{
     Inicio = Inicio->siguiente;
